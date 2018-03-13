@@ -1,7 +1,7 @@
 {
     "name": "kryptopus-candlestick-storage",
     "description": "Candlestick storage bundle",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "neolao <contact@neolao.com>",
     "repository": "https://github.com/kryptopus/candlestick-storage.git",
     "license": "MIT",
