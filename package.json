@@ -1,7 +1,7 @@
 {
     "name": "kryptopus-candlestick-storage",
     "description": "Candlestick storage bundle",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "author": "neolao <contact@neolao.com>",
     "repository": "https://github.com/kryptopus/candlestick-storage.git",
     "license": "MIT",
@@ -15,8 +15,7 @@
     },
     "dependencies": {
         "kryptopus-candlestick": "^1.0.0",
-        "decko": "^1.2.0",
-        "solfegejs-cli": "^4.0.2"
+        "decko": "^1.2.0"
     },
     "devDependencies": {
         "babel-cli": "^6.7",
@@ -26,6 +25,7 @@
         "flow-bin": "^0.60.1",
         "solfegejs-application": "^3.0.1",
         "solfegejs-dependency-injection": "^2.2.5",
+        "solfegejs-cli": "^4.0.2",
         "watch": "^1.0.2"
     },
     "scripts": {
@@ -34,11 +34,10 @@
         "flow-restart": "flow stop && flow start",
         "lint": "eslint --ext .js src",
         "prepare": "npm run lint && npm run build",
-        "prebuild": "npm run lint && npm run flow-restart && flow",
+        "prebuild": "npm run lint && flow",
+        "postbuild": "echo \"---------- READY ---------\"",
         "build": "babel --out-dir lib src --copy-files",
-        "watch": "watch 'echo \"----------\"; npm run build --silent' ./src",
-        "example-build": "babel --out-dir example/lib example/src --copy-files",
-        "example-console": "node  example/lib/console.js"
+        "watch": "watch 'echo \"----- START BUILDING -----\"; npm run build --silent' ./src"
     },
     "babel": {
         "presets": [
